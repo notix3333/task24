@@ -1,0 +1,14 @@
+from re import * 
+s = open("task242.txt").readline() 
+num = r"(0|[1-9][0-9]*)" 
+
+reg = rf"{num}([+\-\*]{num})+"
+
+list1 = [] 
+for x in finditer(reg,s):
+    list1.append(x.group()) 
+
+for x in range(len(list1)):
+    list1[x] = eval(list1[x]) 
+
+print(len(str(max(list1) - min(list1)))) 
