@@ -1,0 +1,19 @@
+s = open("task241.txt").readline()
+
+
+list1 = []
+for i in range(0, len(s), 2):
+    list1.append(int(s[i] + s[i+1], 5)) 
+
+
+count = 1  
+m = 1      
+
+for x in range(len(list1) - 1):
+    if list1[x] > list1[x+1]:
+        count += 1
+        m = max(m, count)
+    else:
+        count = 1 
+
+print(m)
